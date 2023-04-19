@@ -1,0 +1,162 @@
+openapi: 3.0.0
+info:
+  title: BLOGLITE
+  version: 1.0.0
+  description: |
+    DONE BY AKILESH KR 21f3001618
+servers:
+  - url: http://127.0.0.1:3000/
+paths:
+  /api/user/{username}:
+    description: >-
+      End point to read, update and delete a user resource with username.
+    get:
+      description: Operation to get a user details
+      parameters:
+        - in: path
+          name: username
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: user object
+                type: object
+                properties:
+                  user_id:
+                    type: integer
+                    
+                  username:
+                    type: string
+                   
+                  email:
+                    type: string
+                    
+        '400':
+          description: Bad request.
+        '404':
+          description: Resource not found.
+        '500':
+          description: Internal Server Error.
+    put:
+      description: Operation to update the user detail
+      parameters:
+        - in: path
+          name: username
+          required: true
+          schema:
+            type: string
+            example: ali
+      requestBody:
+        content:
+          multipart/form-data:
+              schema:
+                title: user object
+                type: object
+                properties:
+                  password:
+                    type: string
+                  Age:
+                    type: string
+        
+                  email:
+                    type: string
+                    
+                  image:
+                    type: string
+                    format: binary
+      responses:
+        '200':
+          description: Successfuly updated.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                  error_message:
+                    type: string
+        '404':
+          description: Resource you requested to update not found
+        '500':
+          description: Internal Server Error
+    delete:
+      description: Operation to delete the user.
+      parameters:
+        - in: path
+          name: username
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully Deleted.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                  error_message:
+                    type: string
+        '404':
+          description: User does not exist.
+        '500':
+          description: Intenal Server Error.
+  /api/user:
+    description: End point to create a user.
+    post:
+      description: Operation to create the user
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              title: user object
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: ali
+                password:
+                  type: string
+              
+                Age:
+                  type: string
+                  example: ali@example.com
+                email:
+                  type: string
+                  example: ali@example.com
+                image:
+                  type: string
+                  format: binary
+                  
+      responses:
+        '201':
+          description: Successfully Created.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                  error_message:
+                    type: string
+        '409':
+          description: username already exist.
+        '500':
+          description: Internal Server Error.
+    
+    
