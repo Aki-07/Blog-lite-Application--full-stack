@@ -1,0 +1,93 @@
+.heading{
+    color:cornflowerblue;
+    text-decoration-style: wavy;
+    text-shadow: 2em;
+    text-align: center;
+    font-family: 'Baloo Da 2', cursive;
+    height: 30px;
+    font-size: xxx-large;
+    margin-top: -1px;
+}
+
+.containerlogin{
+    width: 450px;
+    height: 330px;
+    margin-left: 33%;
+    margin-top: 120px;
+    background-color:rgb(238, 199, 239);
+}
+
+.signuptext{
+    color:cornflowerblue;
+    padding-top: 0.001rem;
+    padding-left: 20px;
+    font-family: 'Baloo Da 2', cursive;
+    font-size: large;
+}
+
+.login-form{
+    color:cornflowerblue;
+    padding-top: 0.001rem;
+    padding-left: 20px;
+    font-family: 'Baloo Da 2', cursive;
+    font-size: x-large;
+
+}
+
+
+.loginbutton{
+    font-weight: 300;
+    box-shadow: 1px;
+    background-color: pink;
+    text-decoration: solid;
+}
+
+
+.signupform{
+    margin-left: 37%;
+    margin-top: 6%;
+   
+}
+
+
+.signuptext2{
+    color:cornflowerblue;
+    padding-top: 0.001rem;
+    padding-left: 20px;
+    font-family: 'Baloo Da 2', cursive;
+    font-size: x-large;
+}
+
+.pro-heading{
+    height: 200px;
+    width: 100%;
+    background-color:cornflowerblue;
+
+}
+.pro-heading-title{
+
+    text-align:center;
+    position: relative;
+
+    font-size: x-large;
+    margin-bottom: 50%;
+ 
+
+}
+
+
+.photo{
+    height: 50px;
+
+}
+.pro-pic{
+    height: 100px;
+    width: 110px;
+    border-radius: 50%;
+    background-color: aquamarine;
+    margin-left: 20px;
+    margin-top: 10px;
+
+    
+}
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/styles.css">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>My Profile/{{user}}</title>
+</head>
+
+<body style="background-color:pink;">
+
+    <div class="pro-heading">
+            
+                <div style="height: 110px; width : 120px">
+                    <img src = "../{{pic}}" alt="" class = "pro-pic">
+                </div>
+                    <p style="margin-left : 50px; font-size: larger;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-stretch: expanded; width: 60px;"> Hi , {{user}}</p>
+               
+                
+                    <div style="width:20%; margin:auto;text-align: center;bottom:40%;margin-left:38%;position: relative;bottom:110px;"class = "pro-heading-title" >
+                        <form action="/myprofile/{{user}}/homepage.html" , method = "GET">
+                            <button style="border: none; background: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><h1>BLOG LITE</h1></button>
+                        </form>
+                        
+                    </div>
+            <div style="width: 20%;margin-left:50%;margin-left:80%;position: relative;bottom: 140px;">
+                        <form action="/search/{{user}}" method="POST" >
+                            <input type="search" name = search  style = "height: 30px;"placeholder="Search...">
+                            <button style="background-color: pink;height: 30px;">Search</button>
+                        </form>
+                    </div>
+            <div style="margin-left: 69%;width:10%;bottom:250px;position: relative;left:220px;"> 
+                <form action="/edituser/{{user}}">
+                    <button style="border-radius:50%;font-size: larger;width:80%;background-color:pink;">Edit profile</button>
+                </form>
+            </div>
+            <div style="margin-left: 69%;width:9%;bottom:280px;position: relative;left:100px;"> 
+                <form action="/">
+                    <button style="border-radius:50%;font-size: larger;width:80%;background-color:pink;">LogOut</button>
+                </form>
+            </div>
+                       
+        </div>
+
+    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">MY INFO</p>
+    <div style="text-align: center; padding-right: 500px;">
+        <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">FOLLOWERS : {{followers}}</p>
+        <br>
+        <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">FOLLOWING : {{following}} </p>
+        <br>
+        <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">&ensp;&ensp;NO OF POSTS :&ensp;{{posts}} </p>
+    </div>
+
+    <hr style="color: cornflowerblue; text-decoration-thickness:1000px;">
+    <div>
+    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">MY ACTIONS</p>
+        <form action="/addblog.html/{{name}}" method="GET">
+            <button type="submit" style="font-size: large;">ADD BLOG</button>
+        </form>
+        <br>
+
+        <form action="/editblog.html/{{name}}" method="GET">
+            <button type="submit" style="font-size: large;">EDIT BLOG</button>
+        </form>
+
+        <br>
+
+        <form action="/deleteblog.html/{{name}}" method="GET">
+            <button type="submit"style="font-size: large;">DELETE BLOG</button>
+        </form>
+
+
+
+
+    </div>
+
+
+</body>
+</html>
